@@ -22,6 +22,27 @@ def signup():
 				error = "A user with this email already exists!"
 			)
 
+		if username_exists(request.form.get("username")):
+			return render_template(
+				"signup.html",
+				no_navbar = True,
+				error = "A user with this username already exists!"
+			)
+
+		if ssn_exists(request.form.get("ssn")):
+			return render_template(
+				"signup.html",
+				no_navbar = True,
+				error = "A user with this SSN already exists!"
+			)
+
+		if phone_number_exists(request.form.get("phone_number")):
+			return render_template(
+				"signup.html",
+				no_navbar = True,
+				error = "A user with this phone number already exists!"
+			)
+
 		try:
 			run_query(
 				"insert into `users` values ( NULL, :first_name, :last_name, :username, :ssn, :email_address, :phone_number, :password )",
