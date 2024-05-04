@@ -23,6 +23,54 @@ def user_exists(email_address):
 
 	return user[0].id
 
+def ssn_exists(ssn):
+	"""
+	:return:
+		True if the ssn exists
+
+		False otherwise
+	"""
+
+	user = get_query_rows(f"select * from `users` where `ssn` = '{ssn}'")
+
+	if len(user) < 1:
+		return False
+
+	return True
+
+def phone_number_exists(num):
+	"""
+	:param str num: the phone number
+
+	:return:
+		True if the phone number exists
+
+		False otherwise
+	"""
+
+	user = get_query_rows(f"select * from `users` where `phone_number` = '{num}'")
+
+	if len(user) < 1:
+		return False
+
+	return True
+
+def username_exists(username):
+	"""
+
+	:return:
+		True if the username exists
+
+		False otherwise
+	"""
+
+	user = get_query_rows(f"select * from `users` where `username` = '{username}'")
+
+	if len(user) < 1:
+		return False
+
+	return True
+
 def get_email_address(user_id):
 	"""
 	:param int user_id:
