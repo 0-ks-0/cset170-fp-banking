@@ -1,12 +1,12 @@
 create table `users`
 (
 	`id` int unsigned auto_increment,
-	`username` varchar(64) not null,
+	`username` varchar(64) not null unique,
 	`first_name` varchar(64) not null,
 	`last_name` varchar(64) not null,
-	`ssn` varchar(11) not null,
+	`ssn` varchar(11) not null unique,
 	`email_address` varchar(64) unique not null,
-	`phone_number` varchar(15) not null,
+	`phone_number` varchar(15) not null unique,
 	`password` blob not null,
 
 	primary key (`id`)
