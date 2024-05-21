@@ -1,1 +1,23 @@
-hey
+## Setup
+#### Add MySQL to path
+- Copy the installation directory of MySQL server: `C:\Program Files\MySQL\MySQL Server 8.0\bin`
+
+- `Control Panel` > `System` > `Advanced system settings` > `Environment variables...`
+
+- Under `System Variables` > select `Path` >  `Edit` > `New`
+- Paste the installation directory
+
+#### Set up to run code
+- In MySQL, `create database cset170final;`
+- In `server.py` under `# Connect to database`, change `DB_USERNAME` to your username
+- In `server.py` under `# Connect to database`, change `DB_PASSWORD` to your password
+
+### Default accounts for login in website
+- Admin account
+	- Email: `a@a.a`, Password: `a`
+- Customer accounts
+	- Email: `c@c.c`, Password: `c`
+	- Email: `c2@c.c`, Password: `c`
+
+### Notes:
+- Admin must approve the customer accounts before customer can login
